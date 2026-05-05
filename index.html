@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Sitio Web</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://picsum.photos/1600/900');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            background: rgba(255,255,255,0.9);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .video img {
+            width: 560px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .video img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header>
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968852.png" alt="logo">
+        <h2>Mi Sitio Web</h2>
+    </header>
+
+    <!-- BODY -->
+    <main>
+        <h3>Video recomendado</h3>
+
+        <div class="video" id="videoContainer">
+            <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" 
+                 alt="Video"
+                 onclick="loadVideo()">
+            <p>Haz clic para reproducir</p>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Conceptualización de servicios en la nube</p>
+        <p>Aldo Guerrero Ortega</p>
+        <p>Código: 222353187</p>
+        <p>3.2. Sitio Web sencillo</p>
+    </footer>
+
+</div>
+
+<script>
+function loadVideo() {
+    document.getElementById("videoContainer").innerHTML = `
+        <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+        </iframe>
+    `;
+}
+</script>
+
+</body>
+</html>
